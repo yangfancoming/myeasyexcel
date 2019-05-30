@@ -35,17 +35,6 @@ public class ExcelWriter {
         this(outputStream, typeEnum, true);
     }
 
-    @Deprecated
-    private Class<? extends BaseRowModel> objectClass;
-
-    /**
-     * @param generateParam
-     */
-    @Deprecated
-    public ExcelWriter(GenerateParam generateParam) {
-        this(generateParam.getOutputStream(), generateParam.getType(), true);
-        this.objectClass = generateParam.getClazz();
-    }
 
     /**
      *
@@ -89,22 +78,6 @@ public class ExcelWriter {
     public ExcelWriter write(List<? extends BaseRowModel> data, Sheet sheet) {
         excelBuilder.addContent(data, sheet);
         return this;
-    }
-
-
-    /**
-     * Write data to a sheet
-     * @param data Data to be written
-     * @return this current writer
-     */
-    @Deprecated
-    public ExcelWriter write(List data) {
-        if (objectClass != null) {
-            return this.write(data,new Sheet(1,0,objectClass));
-        }else {
-            return this.write0(data,new Sheet(1,0,objectClass));
-
-        }
     }
 
     /**

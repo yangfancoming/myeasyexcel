@@ -56,11 +56,6 @@ public interface AnalysisContext {
      */
     void setCurrentRowNum(Integer row);
 
-    /**
-     * get total row ,Data may be inaccurate
-     */
-    @Deprecated
-    Integer getTotalCount();
 
     /**
      * get total row ,Data may be inaccurate

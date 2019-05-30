@@ -4,7 +4,6 @@ import com.alibaba.excel.analysis.ExcelAnalyser;
 import com.alibaba.excel.analysis.ExcelAnalyserImpl;
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
-import com.alibaba.excel.metadata.BaseRowModel;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.support.ExcelTypeEnum;
 
@@ -18,18 +17,6 @@ public class ExcelReader {
 
     /**
      * Create new reader
-     * @param in            the POI filesystem that contains the Workbook stream
-     * @param excelTypeEnum 03 or 07
-     * @param customContent {@link AnalysisEventListener#invoke(Object, AnalysisContext) }AnalysisContext
-     * @param eventListener Callback method after each row is parsed.
-     */
-    @Deprecated
-    public ExcelReader(InputStream in, ExcelTypeEnum excelTypeEnum, Object customContent, AnalysisEventListener eventListener) {
-        this(in, excelTypeEnum, customContent, eventListener, true);
-    }
-
-    /**
-     * Create new reader
      *
      * @param in            the POI filesystem that contains the Workbook stream
      * @param customContent {@link AnalysisEventListener#invoke(Object, AnalysisContext) }AnalysisContext
@@ -37,23 +24,6 @@ public class ExcelReader {
      */
     public ExcelReader(InputStream in, Object customContent, AnalysisEventListener eventListener) {
         this(in, customContent, eventListener, true);
-    }
-
-    /**
-     * Create new reader
-     *
-     * @param in            the POI filesystem that contains the Workbook stream
-     * @param excelTypeEnum 03 or 07
-     * @param customContent {@link AnalysisEventListener#invoke(Object, AnalysisContext) }AnalysisContext
-     * @param eventListener Callback method after each row is parsed.
-     * @param trim          The content of the form is empty and needs to be empty. The purpose is to be fault-tolerant,
-     *                      because there are often table contents with spaces that can not be converted into custom
-     *                      types. For example: '1234 ' contain a space cannot be converted to int.
-     */
-    @Deprecated
-    public ExcelReader(InputStream in, ExcelTypeEnum excelTypeEnum, Object customContent,  AnalysisEventListener eventListener, boolean trim) {
-        validateParam(in, eventListener);
-        analyser = new ExcelAnalyserImpl(in, excelTypeEnum, customContent, eventListener, trim);
     }
 
     /**
@@ -84,18 +54,6 @@ public class ExcelReader {
      * @param sheet Read sheet
      */
     public void read(Sheet sheet) {
-        analyser.analysis(sheet);
-    }
-
-    /**
-     * Parse the specified sheet
-     *
-     * @param sheet  Read sheet
-     * @param clazz object parsed into each row of data
-     */
-    @Deprecated
-    public void read(Sheet sheet, Class<? extends BaseRowModel> clazz) {
-        sheet.setClazz(clazz);
         analyser.analysis(sheet);
     }
 

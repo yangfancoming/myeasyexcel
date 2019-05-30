@@ -137,11 +137,6 @@ public class AnalysisContextImpl implements AnalysisContext {
     }
 
     @Override
-    public Integer getTotalCount() {
-        return totalCount;
-    }
-
-    @Override
     public void setTotalCount(Integer totalCount) {
         this.totalCount = totalCount;
     }
