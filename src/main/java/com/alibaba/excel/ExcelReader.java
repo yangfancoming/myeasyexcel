@@ -6,7 +6,6 @@ import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.alibaba.excel.metadata.BaseRowModel;
 import com.alibaba.excel.metadata.Sheet;
-import com.alibaba.excel.parameter.AnalysisParam;
 import com.alibaba.excel.support.ExcelTypeEnum;
 
 import java.io.InputStream;
@@ -19,7 +18,6 @@ public class ExcelReader {
 
     /**
      * Create new reader
-     *
      * @param in            the POI filesystem that contains the Workbook stream
      * @param excelTypeEnum 03 or 07
      * @param customContent {@link AnalysisEventListener#invoke(Object, AnalysisContext) }AnalysisContext
@@ -39,17 +37,6 @@ public class ExcelReader {
      */
     public ExcelReader(InputStream in, Object customContent, AnalysisEventListener eventListener) {
         this(in, customContent, eventListener, true);
-    }
-
-    /**
-     * Create new reader
-     *
-     * @param param         old param Deprecated
-     * @param eventListener Callback method after each row is parsed.
-     */
-    @Deprecated
-    public ExcelReader(AnalysisParam param, AnalysisEventListener eventListener) {
-        this(param.getIn(), param.getExcelTypeEnum(), param.getCustomContent(), eventListener, true);
     }
 
     /**
@@ -94,7 +81,6 @@ public class ExcelReader {
 
     /**
      * Parse the specified sheet，SheetNo start from 1
-     *
      * @param sheet Read sheet
      */
     public void read(Sheet sheet) {
@@ -115,19 +101,13 @@ public class ExcelReader {
 
     /**
      * Parse the workBook get all sheets
-     *
      * @return workBook all sheets
      */
     public List<Sheet> getSheets() {
         return analyser.getSheets();
     }
 
-    /**
-     * validate param
-     *
-     * @param in
-     * @param eventListener
-     */
+    /**  校检两个参数都不能为 null */
     private void validateParam(InputStream in,  AnalysisEventListener eventListener) {
         if (eventListener == null) {
             throw new IllegalArgumentException("AnalysisEventListener can not null");

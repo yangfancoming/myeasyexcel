@@ -19,9 +19,6 @@ public abstract class BaseSaxAnalyser implements AnalysisEventRegisterCenter, Ex
 
     private LinkedHashMap<String, AnalysisEventListener> listeners = new LinkedHashMap<String, AnalysisEventListener>();
 
-    /**
-     * execute method
-     */
     protected abstract void execute();
 
 

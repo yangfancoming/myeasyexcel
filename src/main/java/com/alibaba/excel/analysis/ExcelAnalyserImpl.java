@@ -20,10 +20,8 @@ public class ExcelAnalyserImpl implements ExcelAnalyser {
 
     private BaseSaxAnalyser saxAnalyser;
 
-    public ExcelAnalyserImpl(InputStream inputStream, ExcelTypeEnum excelTypeEnum, Object custom,
-                             AnalysisEventListener eventListener, boolean trim) {
-        analysisContext = new AnalysisContextImpl(inputStream, excelTypeEnum, custom,
-            eventListener, trim);
+    public ExcelAnalyserImpl(InputStream inputStream, ExcelTypeEnum excelTypeEnum, Object custom, AnalysisEventListener eventListener, boolean trim) {
+        analysisContext = new AnalysisContextImpl(inputStream, excelTypeEnum, custom, eventListener, trim);
     }
 
     private BaseSaxAnalyser getSaxAnalyser() {

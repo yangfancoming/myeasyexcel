@@ -61,8 +61,7 @@ public class AnalysisContextImpl implements AnalysisContext {
 
     private Object currentRowAnalysisResult;
 
-    public AnalysisContextImpl(InputStream inputStream, ExcelTypeEnum excelTypeEnum, Object custom,
-                               AnalysisEventListener listener, boolean trim) {
+    public AnalysisContextImpl(InputStream inputStream, ExcelTypeEnum excelTypeEnum, Object custom, AnalysisEventListener listener, boolean trim) {
         this.custom = custom;
         this.eventListener = listener;
         this.inputStream = inputStream;

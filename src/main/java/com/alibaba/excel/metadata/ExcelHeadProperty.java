@@ -2,15 +2,12 @@ package com.alibaba.excel.metadata;
 
 import com.alibaba.excel.annotation.ExcelColumnNum;
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.alibaba.excel.util.StringUtils;
 
 import java.lang.reflect.Field;
 import java.util.*;
 
 /**
  * Define the header attribute of excel
- *
- * @author jipengfei
  */
 public class ExcelHeadProperty {
 
@@ -22,7 +19,7 @@ public class ExcelHeadProperty {
     /**
      * A two-dimensional array describing the header
      */
-    private List<List<String>> head = new ArrayList<List<String>>();
+    private List<List<String>> head;
 
     /**
      * Attributes described by the header

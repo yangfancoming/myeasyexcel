@@ -8,20 +8,14 @@ public class Sheet {
 
     private int headLineMun;
 
-    /**
-     * Starting from 1
-     */
+    /*** 从 1 开始*/
     private int sheetNo;
-
 
     private String sheetName;
 
-
     private Class<? extends BaseRowModel> clazz;
 
-
     private List<List<String>> head;
-
 
     private TableStyle tableStyle;
 
@@ -30,9 +24,7 @@ public class Sheet {
      */
     private Map<Integer,Integer> columnWidthMap = new HashMap<Integer, Integer>();
 
-
     private Boolean autoWidth = Boolean.FALSE;
-
 
     private int startRow = 0;
 
@@ -52,8 +44,7 @@ public class Sheet {
         this.clazz = clazz;
     }
 
-    public Sheet(int sheetNo, int headLineMun, Class<? extends BaseRowModel> clazz, String sheetName,
-                 List<List<String>> head) {
+    public Sheet(int sheetNo, int headLineMun, Class<? extends BaseRowModel> clazz, String sheetName, List<List<String>> head) {
         this.sheetNo = sheetNo;
         this.clazz = clazz;
         this.headLineMun = headLineMun;
