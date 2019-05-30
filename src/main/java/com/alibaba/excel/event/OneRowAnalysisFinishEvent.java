@@ -21,7 +21,7 @@ public class OneRowAnalysisFinishEvent {
             for (int i = 0; i <= length; i++) {
                 ls.add(content[i]);
             }
-//            Arrays.stream(content).forEach(s->ls.add(s));  doit
+//            Arrays.stream(content).forEach(s->ls.add(s));  doit 123
 //            Arrays.stream(content).forEach(s ->System.out.println(s));
             data = ls;
         }
