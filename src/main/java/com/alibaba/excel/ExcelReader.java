@@ -12,16 +12,9 @@ import com.alibaba.excel.support.ExcelTypeEnum;
 import java.io.InputStream;
 import java.util.List;
 
-/**
- * Excel readers are all read in event mode.
- *
- * @author jipengfei
- */
+
 public class ExcelReader {
 
-    /**
-     * Analyser
-     */
     private ExcelAnalyser analyser ;
 
     /**
@@ -33,8 +26,7 @@ public class ExcelReader {
      * @param eventListener Callback method after each row is parsed.
      */
     @Deprecated
-    public ExcelReader(InputStream in, ExcelTypeEnum excelTypeEnum, Object customContent,
-                       AnalysisEventListener eventListener) {
+    public ExcelReader(InputStream in, ExcelTypeEnum excelTypeEnum, Object customContent, AnalysisEventListener eventListener) {
         this(in, excelTypeEnum, customContent, eventListener, true);
     }
 
@@ -45,8 +37,7 @@ public class ExcelReader {
      * @param customContent {@link AnalysisEventListener#invoke(Object, AnalysisContext) }AnalysisContext
      * @param eventListener Callback method after each row is parsed
      */
-    public ExcelReader(InputStream in, Object customContent,
-                       AnalysisEventListener eventListener) {
+    public ExcelReader(InputStream in, Object customContent, AnalysisEventListener eventListener) {
         this(in, customContent, eventListener, true);
     }
 
@@ -73,8 +64,7 @@ public class ExcelReader {
      *                      types. For example: '1234 ' contain a space cannot be converted to int.
      */
     @Deprecated
-    public ExcelReader(InputStream in, ExcelTypeEnum excelTypeEnum, Object customContent,
-                       AnalysisEventListener eventListener, boolean trim) {
+    public ExcelReader(InputStream in, ExcelTypeEnum excelTypeEnum, Object customContent,  AnalysisEventListener eventListener, boolean trim) {
         validateParam(in, eventListener);
         analyser = new ExcelAnalyserImpl(in, excelTypeEnum, customContent, eventListener, trim);
     }
@@ -89,8 +79,7 @@ public class ExcelReader {
      *                      because there are often table contents with spaces that can not be converted into custom
      *                      types. For example: '1234 ' contain a space cannot be converted to int.
      */
-    public ExcelReader(InputStream in, Object customContent,
-                       AnalysisEventListener eventListener, boolean trim) {
+    public ExcelReader(InputStream in, Object customContent,AnalysisEventListener eventListener, boolean trim) {
         ExcelTypeEnum excelTypeEnum = ExcelTypeEnum.valueOf(in);
         validateParam(in, eventListener);
         analyser =new ExcelAnalyserImpl(in, excelTypeEnum, customContent, eventListener, trim);

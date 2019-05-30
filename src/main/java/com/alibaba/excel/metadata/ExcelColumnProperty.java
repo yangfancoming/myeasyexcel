@@ -4,25 +4,19 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author jipengfei
- */
+
 public class ExcelColumnProperty implements Comparable<ExcelColumnProperty> {
 
-    /**
-     */
+
     private Field field;
 
-    /**
-     */
+
     private int index = 99999;
 
-    /**
-     */
+
     private List<String> head = new ArrayList<String>();
 
-    /**
-     */
+
     private String format;
 
     public String getFormat() {

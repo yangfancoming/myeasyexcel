@@ -12,12 +12,10 @@ import com.alibaba.excel.support.ExcelTypeEnum;
 @Deprecated
 public class ExcelWriteParam {
 
-    /**
-     */
+
     private OutputStream outputStream;
 
-    /**
-     */
+
     private ExcelTypeEnum type;
 
     public ExcelWriteParam(OutputStream outputStream, ExcelTypeEnum type) {

@@ -3,9 +3,7 @@ package com.alibaba.excel.event;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author jipengfei
- */
+
 public class OneRowAnalysisFinishEvent {
 
     public OneRowAnalysisFinishEvent(Object content) {

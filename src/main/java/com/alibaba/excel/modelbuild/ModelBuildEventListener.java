@@ -9,9 +9,7 @@ import net.sf.cglib.beans.BeanMap;
 
 import java.util.List;
 
-/**
- * @author jipengfei
- */
+
 public class ModelBuildEventListener extends AnalysisEventListener {
 
     @Override

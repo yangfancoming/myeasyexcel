@@ -16,10 +16,7 @@ import java.util.Arrays;
 
 import static com.alibaba.excel.constant.ExcelXmlConstants.*;
 
-/**
- *
- * @author jipengfei
- */
+
 public class XlsxRowHandler extends DefaultHandler {
 
     private String currentCellIndex;
@@ -40,16 +37,14 @@ public class XlsxRowHandler extends DefaultHandler {
 
     private AnalysisEventRegisterCenter registerCenter;
 
-    public XlsxRowHandler(AnalysisEventRegisterCenter registerCenter, SharedStringsTable sst,
-                          AnalysisContext analysisContext) {
+    public XlsxRowHandler(AnalysisEventRegisterCenter registerCenter, SharedStringsTable sst, AnalysisContext analysisContext) {
         this.registerCenter = registerCenter;
         this.analysisContext = analysisContext;
         this.sst = sst;
-
     }
 
     @Override
-    public void startElement(String uri, String localName, String name, Attributes attributes) throws SAXException {
+    public void startElement(String uri, String localName, String name, Attributes attributes) {
 
         setTotalRowCount(name, attributes);
 
@@ -112,7 +107,7 @@ public class XlsxRowHandler extends DefaultHandler {
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         currentCellValue += new String(ch, start, length);
     }
 

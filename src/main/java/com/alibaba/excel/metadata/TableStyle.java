@@ -2,9 +2,7 @@ package com.alibaba.excel.metadata;
 
 import org.apache.poi.ss.usermodel.IndexedColors;
 
-/**
- * @author jipengfei
- */
+
 public class TableStyle {
 
     /**

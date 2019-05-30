@@ -4,14 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- *
- * @author jipengfei
- */
 public class Sheet {
 
-    /**
-     */
     private int headLineMun;
 
     /**
@@ -19,21 +13,16 @@ public class Sheet {
      */
     private int sheetNo;
 
-    /**
-     */
+
     private String sheetName;
 
-    /**
-     */
+
     private Class<? extends BaseRowModel> clazz;
 
-    /**
-     */
+
     private List<List<String>> head;
 
-    /**
-     *
-     */
+
     private TableStyle tableStyle;
 
     /**
@@ -41,14 +30,10 @@ public class Sheet {
      */
     private Map<Integer,Integer> columnWidthMap = new HashMap<Integer, Integer>();
 
-    /**
-     *
-     */
+
     private Boolean autoWidth = Boolean.FALSE;
 
-    /**
-     *
-     */
+
     private int startRow = 0;
 
 

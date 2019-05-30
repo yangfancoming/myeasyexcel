@@ -12,9 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author jipengfei
- */
+
 public abstract class BaseSaxAnalyser implements AnalysisEventRegisterCenter, ExcelAnalyser {
 
     protected AnalysisContext analysisContext;
@@ -44,8 +42,7 @@ public abstract class BaseSaxAnalyser implements AnalysisEventRegisterCenter, Ex
         execute();
     }
 
-    /**
-     */
+
     @Override
     public void cleanAllListeners() {
         listeners = new LinkedHashMap<String, AnalysisEventListener>();

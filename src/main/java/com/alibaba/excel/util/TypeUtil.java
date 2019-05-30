@@ -13,9 +13,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * @author jipengfei
- */
+
 public class TypeUtil {
 
     private static List<String> DATE_FORMAT_LIST = new ArrayList<String>(4);

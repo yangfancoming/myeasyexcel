@@ -1,8 +1,6 @@
 package com.alibaba.excel.util;
 
-/**
- * @author jipengfei
- */
+
 public class PositionUtils {
 
     public static int getRow(String currentCellIndex) {

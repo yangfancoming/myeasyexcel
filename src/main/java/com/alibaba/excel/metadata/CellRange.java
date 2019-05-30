@@ -1,8 +1,6 @@
 package com.alibaba.excel.metadata;
 
-/**
- * @author jipengfei
- */
+
 public class CellRange {
 
     private int firstRow;

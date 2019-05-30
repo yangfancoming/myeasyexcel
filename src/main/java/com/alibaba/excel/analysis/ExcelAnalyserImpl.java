@@ -13,9 +13,7 @@ import com.alibaba.excel.support.ExcelTypeEnum;
 import java.io.InputStream;
 import java.util.List;
 
-/**
- * @author jipengfei
- */
+
 public class ExcelAnalyserImpl implements ExcelAnalyser {
 
     private AnalysisContext analysisContext;

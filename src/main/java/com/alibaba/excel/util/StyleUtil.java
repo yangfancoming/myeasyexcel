@@ -4,9 +4,7 @@ import org.apache.poi.ss.usermodel.*;
 
 import java.util.Map;
 
-/**
- * @author jipengfei
- */
+
 public class StyleUtil {
 
     /**

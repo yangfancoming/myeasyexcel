@@ -1,21 +1,15 @@
 package com.alibaba.excel.metadata;
 
-/**
- *
- * @author jipengfei
- */
+
 public class Font {
 
-    /**
-     */
+
     private String fontName;
 
-    /**
-     */
+
     private short fontHeightInPoints;
 
-    /**
-     */
+
     private boolean bold;
 
     public String getFontName() {

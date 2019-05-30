@@ -76,8 +76,7 @@ public class ExcelWriter {
      * @param typeEnum 03 or 07
      * @param writeHandler User-defined callback
      */
-    public ExcelWriter(InputStream templateInputStream, OutputStream outputStream, ExcelTypeEnum typeEnum, Boolean needHead,
-                       WriteHandler writeHandler) {
+    public ExcelWriter(InputStream templateInputStream, OutputStream outputStream, ExcelTypeEnum typeEnum, Boolean needHead,  WriteHandler writeHandler) {
         excelBuilder = new ExcelBuilderImpl(templateInputStream,outputStream, typeEnum, needHead,writeHandler);
     }
 

@@ -23,9 +23,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.List;
 
-/**
- * @author jipengfei
- */
+
 public class ExcelBuilderImpl implements ExcelBuilder {
 
     private WriteContext context;

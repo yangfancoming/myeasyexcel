@@ -42,9 +42,7 @@ public class WriteContext {
      */
     private String currentSheetName;
 
-    /**
-     *
-     */
+
     private Table currentTable;
 
     /**

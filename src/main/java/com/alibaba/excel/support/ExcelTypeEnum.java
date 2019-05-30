@@ -5,9 +5,6 @@ import org.apache.poi.poifs.filesystem.FileMagic;
 import java.io.IOException;
 import java.io.InputStream;
 
-/**
- * @author jipengfei
- */
 public enum ExcelTypeEnum {
 
     XLS(".xls"), XLSX(".xlsx");

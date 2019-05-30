@@ -23,17 +23,14 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author jipengfei
- */
+
 public class XlsxSaxAnalyser extends BaseSaxAnalyser {
 
     private XSSFReader xssfReader;
 
     private SharedStringsTable sharedStringsTable;
 
-    private List<SheetSource> sheetSourceList = new ArrayList<SheetSource>();
+    private List<SheetSource> sheetSourceList;
 
     private boolean use1904WindowDate = false;
 

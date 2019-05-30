@@ -11,10 +11,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author jipengfei
- */
+
 public class AnalysisContextImpl implements AnalysisContext {
 
     private Object custom;

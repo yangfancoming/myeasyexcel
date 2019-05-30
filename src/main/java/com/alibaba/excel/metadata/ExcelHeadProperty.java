@@ -40,8 +40,7 @@ public class ExcelHeadProperty {
         initColumnProperties();
     }
 
-    /**
-     */
+
     private void initColumnProperties() {
         if (this.headClazz != null) {
             List<Field> fieldList = new ArrayList<Field>();
@@ -97,9 +96,7 @@ public class ExcelHeadProperty {
 
     }
 
-    /**
-     *
-     */
+
     public void appendOneRow(List<String> row) {
 
         for (int i = 0; i < row.size(); i++) {

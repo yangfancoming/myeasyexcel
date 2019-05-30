@@ -2,24 +2,18 @@ package com.alibaba.excel.metadata;
 
 import java.util.List;
 
-/**
- * @author jipengfei
- */
+
 public class Table {
-    /**
-     */
+
     private Class<? extends BaseRowModel> clazz;
 
-    /**
-     */
+
     private List<List<String>> head;
 
-    /**
-     */
+
     private int tableNo;
 
-    /**
-     */
+
     private TableStyle tableStyle;
 
     public TableStyle getTableStyle() {

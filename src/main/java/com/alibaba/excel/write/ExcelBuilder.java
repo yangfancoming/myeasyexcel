@@ -5,9 +5,7 @@ import com.alibaba.excel.metadata.Table;
 
 import java.util.List;
 
-/**
- * @author jipengfei
- */
+
 public interface ExcelBuilder {
 
     /**

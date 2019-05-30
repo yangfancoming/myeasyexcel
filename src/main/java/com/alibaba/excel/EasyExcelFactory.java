@@ -13,8 +13,6 @@ import java.util.List;
 
 /**
  * Reader and writer factory class
- *
- * @author jipengfei
  */
 public class EasyExcelFactory {
 
@@ -93,8 +91,7 @@ public class EasyExcelFactory {
      * @param typeEnum     03 or 07
      * @return new  ExcelWriter
      */
-    public static ExcelWriter getWriterWithTemp(InputStream temp, OutputStream outputStream, ExcelTypeEnum typeEnum,
-                                                boolean needHead) {
+    public static ExcelWriter getWriterWithTemp(InputStream temp, OutputStream outputStream, ExcelTypeEnum typeEnum,boolean needHead) {
         return new ExcelWriter(temp, outputStream, typeEnum, needHead);
     }
 
@@ -109,11 +106,7 @@ public class EasyExcelFactory {
      * @param handler      User-defined callback
      * @return new  ExcelWriter
      */
-    public static ExcelWriter getWriterWithTempAndHandler(InputStream temp,
-                                                          OutputStream outputStream,
-                                                          ExcelTypeEnum typeEnum,
-                                                          boolean needHead,
-                                                          WriteHandler handler) {
+    public static ExcelWriter getWriterWithTempAndHandler(InputStream temp, OutputStream outputStream,ExcelTypeEnum typeEnum,boolean needHead, WriteHandler handler) {
         return new ExcelWriter(temp, outputStream, typeEnum, needHead, handler);
     }
 
