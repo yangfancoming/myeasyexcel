@@ -26,7 +26,6 @@ public class MyAnalysisEventListener extends AnalysisEventListener {
         rows.add(object);
     }
 
-
     @Override
     public void doAfterAllAnalysed(AnalysisContext context) {
         System.out.println("doAfterAllAnalysed..........");

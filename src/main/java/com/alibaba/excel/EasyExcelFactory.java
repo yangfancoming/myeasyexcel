@@ -23,7 +23,7 @@ public class EasyExcelFactory {
      * @return analysis result.
      */
     public static List<Object> read(InputStream in, Sheet sheet) {
-        final List<Object> rows = new ArrayList<Object>();
+        final List<Object> rows = new ArrayList<>();
         ExcelReader excelReader = new ExcelReader(in, null,  new MyAnalysisEventListener(rows), false);
         excelReader.read(sheet);
         return rows;

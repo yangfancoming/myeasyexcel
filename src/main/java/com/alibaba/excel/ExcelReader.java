@@ -39,7 +39,7 @@ public class ExcelReader {
     public ExcelReader(InputStream in, Object customContent,AnalysisEventListener eventListener, boolean trim) {
         ExcelTypeEnum excelTypeEnum = ExcelTypeEnum.valueOf(in);
         validateParam(in, eventListener);
-        analyser =new ExcelAnalyserImpl(in, excelTypeEnum, customContent, eventListener, trim);
+        analyser = new ExcelAnalyserImpl(in, excelTypeEnum, customContent, eventListener, trim);
     }
 
     /**

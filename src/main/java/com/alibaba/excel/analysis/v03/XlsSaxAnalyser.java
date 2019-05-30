@@ -49,9 +49,7 @@ public class XlsSaxAnalyser extends BaseSaxAnalyser implements HSSFListener {
     @Override
     public void execute() {
         init();
-        MissingRecordAwareHSSFListener listener = new MissingRecordAwareHSSFListener(this);
-        formatListener = new FormatTrackingHSSFListener(listener);
-
+        formatListener = new FormatTrackingHSSFListener(new MissingRecordAwareHSSFListener(this));
         HSSFEventFactory factory = new HSSFEventFactory();
         HSSFRequest request = new HSSFRequest();
 
@@ -75,11 +73,11 @@ public class XlsSaxAnalyser extends BaseSaxAnalyser implements HSSFListener {
         nextRow = 0;
         nextColumn = 0;
         sheetIndex = 0;
-        records = new ArrayList<String>();
+        records = new ArrayList<>();
         notAllEmpty = false;
         orderedBSRs = null;
-        boundSheetRecords = new ArrayList<BoundSheetRecord>();
-        sheets = new ArrayList<Sheet>();
+        boundSheetRecords = new ArrayList<>();
+        sheets = new ArrayList<>();
         if (analysisContext.getCurrentSheet() == null) {
             this.analyAllSheet = true;
         } else {
@@ -125,9 +123,9 @@ public class XlsSaxAnalyser extends BaseSaxAnalyser implements HSSFListener {
 
     private BoundSheetRecord[] orderedBSRs;
 
-    private List<BoundSheetRecord> boundSheetRecords = new ArrayList<BoundSheetRecord>();
+    private List<BoundSheetRecord> boundSheetRecords = new ArrayList<>();
 
-    private List<Sheet> sheets = new ArrayList<Sheet>();
+    private List<Sheet> sheets = new ArrayList<>();
 
     public void processRecord(Record record) {
         int thisRow = -1;

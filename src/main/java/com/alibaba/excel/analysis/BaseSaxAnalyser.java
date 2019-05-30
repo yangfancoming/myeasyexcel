@@ -17,7 +17,7 @@ public abstract class BaseSaxAnalyser implements AnalysisEventRegisterCenter, Ex
 
     protected AnalysisContext analysisContext;
 
-    private LinkedHashMap<String, AnalysisEventListener> listeners = new LinkedHashMap<String, AnalysisEventListener>();
+    private LinkedHashMap<String, AnalysisEventListener> listeners = new LinkedHashMap<>();
 
     protected abstract void execute();
 
@@ -42,7 +42,7 @@ public abstract class BaseSaxAnalyser implements AnalysisEventRegisterCenter, Ex
 
     @Override
     public void cleanAllListeners() {
-        listeners = new LinkedHashMap<String, AnalysisEventListener>();
+        listeners = new LinkedHashMap<>();
     }
 
     @Override
@@ -69,7 +69,7 @@ public abstract class BaseSaxAnalyser implements AnalysisEventRegisterCenter, Ex
     }
 
     private List<String> converter(List<String> data) {
-        List<String> list = new ArrayList<String>();
+        List<String> list = new ArrayList<>();
         if (data != null) {
             for (String str : data) {
                 list.add(TypeUtil.formatFloat(str));

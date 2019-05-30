@@ -9,7 +9,6 @@ import com.alibaba.excel.util.PositionUtils;
 import org.apache.poi.xssf.model.SharedStringsTable;
 import org.apache.poi.xssf.usermodel.XSSFRichTextString;
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.util.Arrays;
@@ -80,7 +79,7 @@ public class XlsxRowHandler extends DefaultHandler {
         }
     }
 
-    private void endCellValue(String name) throws SAXException {
+    private void endCellValue(String name) {
         // ensure size
         if (curCol >= curRowContent.length) {
             curRowContent = Arrays.copyOf(curRowContent, (int)(curCol * 1.5));
@@ -101,7 +100,7 @@ public class XlsxRowHandler extends DefaultHandler {
     }
 
     @Override
-    public void endElement(String uri, String localName, String name) throws SAXException {
+    public void endElement(String uri, String localName, String name) {
         endRow(name);
         endCellValue(name);
     }
@@ -115,7 +114,7 @@ public class XlsxRowHandler extends DefaultHandler {
     private void setTotalRowCount(String name, Attributes attributes) {
         if (DIMENSION.equals(name)) {
             String d = attributes.getValue(DIMENSION_REF);
-            String totalStr = d.substring(d.indexOf(":") + 1, d.length());
+            String totalStr = d.substring(d.indexOf(":") + 1);
             String c = totalStr.toUpperCase().replaceAll("[A-Z]", "");
             analysisContext.setTotalCount(Integer.parseInt(c));
         }

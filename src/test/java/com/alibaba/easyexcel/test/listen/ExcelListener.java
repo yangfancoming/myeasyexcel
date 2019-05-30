@@ -9,15 +9,16 @@ import java.util.List;
 public class ExcelListener extends AnalysisEventListener {
 
 
-    private List<Object>  data = new ArrayList<Object>();
+    private List<Object>  data = new ArrayList<>();
 
     @Override
     public void invoke(Object object, AnalysisContext context) {
         System.out.println(context.getCurrentSheet());
         data.add(object);
+
         if(data.size()>=100){
             doSomething();
-            data = new ArrayList<Object>();
+            data = new ArrayList<>();
         }
     }
 
@@ -25,9 +26,8 @@ public class ExcelListener extends AnalysisEventListener {
     public void doAfterAllAnalysed(AnalysisContext context) {
         doSomething();
     }
+
     public void doSomething(){
-        for (Object o:data) {
-            System.out.println(o);
-        }
+        data.forEach(x->System.out.println(x));
     }
 }

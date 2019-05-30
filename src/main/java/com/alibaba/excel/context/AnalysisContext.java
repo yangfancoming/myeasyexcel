@@ -27,7 +27,6 @@ public interface AnalysisContext {
 
     /**
      * set current sheet
-     * @param sheet
      */
     void setCurrentSheet(Sheet sheet);
 
@@ -77,7 +76,6 @@ public interface AnalysisContext {
 
     /**
      * set current result
-     * @param result
      */
     void setCurrentRowAnalysisResult(Object result);
 
